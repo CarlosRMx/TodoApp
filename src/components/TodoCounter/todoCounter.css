@@ -1,0 +1,10 @@
+.tittle{
+    display: flex;
+    justify-content: center;
+    margin-block-start: 16px;
+}
+h1{
+    color: #F5ECFF;
+    font-size: 36px;
+    font-weight: bold;
+}

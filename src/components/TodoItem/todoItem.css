@@ -1,0 +1,13 @@
+.taskCard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 90%;
+    min-width: 320px;
+    max-width: 280px;
+    min-height: 86px;
+    color: #F5ECFF;
+    border: solid 1px #9182EC;
+    border-radius: 18px;
+}

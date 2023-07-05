@@ -1,0 +1,16 @@
+.inputContainer{
+    display: flex;
+    justify-content: center;
+    margin-block-start: 16px;
+    width: 100%;
+}
+.inputContainer__field{
+    width: 35%;
+    height: 36px;
+    padding-inline-start: 12px;
+    color: #9182EC;
+    font-size: 16px;
+    background: transparent;
+    border: solid 1px #00C89B;
+    border-radius: 16px;
+}
