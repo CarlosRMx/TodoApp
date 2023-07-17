@@ -1,7 +1,14 @@
+import './createTodo.css';
 
 function CreateTodoButton() {
   return (
-    <button>+</button>
+    <button 
+      className="createButton"
+      onClick={()=>{
+        console.log('estoy dando click en el boton crear');
+      }}
+    >+
+    </button>
   )
 }
 
