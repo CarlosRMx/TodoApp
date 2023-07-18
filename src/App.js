@@ -30,21 +30,49 @@ function App() {
     return todoName.includes(inputValue);
   });
 
+  const completeTodo = (searchedTodo) =>{
+    const arrayCopy = [...todos];
+    const todoIndex =  arrayCopy.findIndex( todo =>{
+      return todo.name === searchedTodo
+    });
+    arrayCopy[todoIndex].status = true;
+    setTodos(arrayCopy);
+  }
+
+  const deleteTodo = (searchedTodo) => {
+    const arrayCopy = [...todos];
+    const todoIndex = arrayCopy.findIndex(todo => {
+      return todo.name === searchedTodo
+    });
+    arrayCopy.splice(todoIndex,1);
+    setTodos(arrayCopy);
+  }
+
+  
 
   return (
     <React.Fragment>
 
-      <TodoCounter completed={completedTodo} total={totalTodos}/>
+      <TodoCounter 
+        completed={completedTodo} 
+        total={totalTodos}
+      />
 
       <TodoSearch 
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
+        searchValue = {searchValue}
+        setSearchValue = {setSearchValue}
       />
 
       <TodoList>
         {foundList.map(todo =>
           //cada elemento que se renderiza debe tener una key como identificador unico
-          <TodoItem key={todo.name} name={todo.name} status={todo.status}/>
+          <TodoItem 
+            key = {todo.name} 
+            name = {todo.name} 
+            status = {todo.status}
+            onCompleted = {()=> completeTodo(todo.name)}
+            onDeleted = {()=> deleteTodo(todo.name)}
+          />
         )}
       
       </TodoList>
