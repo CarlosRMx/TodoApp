@@ -1,14 +1,13 @@
 import React from 'react';
 import './todoSearch.css';
+import { TodoContext } from '../../context';
 
-
-function TodoSearch({searchValue,setSearchValue}) {
-  // //estado en react 
-  // // searchValue es el estado 
-  // // setSearchValue es la funcion actualizadora del estado
-  // // React.state es una funcion dentro de parentesis se define el estado inicial
-  // const [searchValue, setSearchValue] = React.useState('');
-
+function TodoSearch() {
+  //haciendo uso del contexto para poder comunicar las props
+  const {
+    searchValue,
+    setSearchValue,
+  } = React.useContext(TodoContext);
   return (
     <div className='inputContainer'>
       <input 

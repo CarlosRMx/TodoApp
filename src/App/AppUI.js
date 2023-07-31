@@ -4,52 +4,58 @@ import { TodoList } from '../components/TodoList';
 import { TodoSearch } from '../components/TodoSearch';
 import { TodoItem } from '../components/TodoItem';
 import { CreateTodoButton } from '../components/CreateTodo';
+import { TodosLoading } from "../components/TodosLoading";
+import { Modal } from "../components/Modal";
+import { TodoForm } from "../components/TodoForm";
+import { EmptyTodos } from "../components/EmptyTodos";
+import { TodoContext } from "../context";
 
-function AppUI ({
-    completedTodo,
-    totalTodos,
-    searchValue,
-    setSearchValue,
+function AppUI (){
+  const {
+    loading,
+    error,
     foundList,
     completeTodo,
     deleteTodo,
-    loading,
-    error,
-
-}){
+    openModal,
+    setOpenModal,
+  } = React.useContext(TodoContext);
     return(
-        <React.Fragment>
+      <React.Fragment>
 
-        <TodoCounter 
-          completed={completedTodo} 
-          total={totalTodos}
-        />
+        <TodoCounter/>
   
-        <TodoSearch 
-          searchValue = {searchValue}
-          setSearchValue = {setSearchValue}
-        />
-  
+        <TodoSearch/>
+
         <TodoList>
-          {/* escenarios en los estado de carga */}
-          {loading && <p>Estamos cargando...</p>}
-          {error && <p>Hubo un error con los datos</p>}
-          {!loading && foundList.lenght === 0 && <p>Crea tu primer Todo</p> }
+              {/* escenarios en los estado de carga */}
+              {loading && <TodosLoading/>}
 
-          {foundList.map(todo =>
-            //cada elemento que se renderiza debe tener una key como identificador unico
-            <TodoItem 
-              key = {todo.name} 
-              name = {todo.name} 
-              status = {todo.status}
-              onCompleted = {()=> completeTodo(todo.name)}
-              onDeleted = {()=> deleteTodo(todo.name)}
-            />
-          )}
-        
+              {error && <p>Hubo un error con los datos</p>}
+              
+              {(!loading && foundList.lenght === 0) && <EmptyTodos/> }
+
+              {foundList.map(todo =>
+                //cada elemento que se renderiza debe tener una key como identificador unico
+                <TodoItem 
+                  key = {todo.name} 
+                  name = {todo.name} 
+                  status = {todo.status}
+                  onCompleted = {()=> completeTodo(todo.name)}
+                  onDeleted = {()=> deleteTodo(todo.name)}
+                />
+              )}
+            
         </TodoList>
-  
+      
         <CreateTodoButton/>
+
+        {openModal && (
+          <Modal>
+            <TodoForm/>
+          </Modal>
+        )}        
+
       </React.Fragment>
     );
 }

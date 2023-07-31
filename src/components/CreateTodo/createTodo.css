@@ -11,6 +11,7 @@
     border: solid 1px #00A983;
     background-color: transparent;
     cursor: pointer;
+    z-index: 1;
 }
 .createButton:hover{
     background-color: #FFFADE;

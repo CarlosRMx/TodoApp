@@ -52,3 +52,18 @@ function useLocalStorage(itemName, initialValue) {
 }
 
 export {useLocalStorage};
+
+//haciendo render a partir de arrays
+// const defaulTodos=[
+//   {name:'Cortar cebolla',status:false},
+//   {name:'Tomar el curso de introduccion a React.js',status:false},
+//   {name:'Comprar comida',status:false},
+//   {name:'Llamar al banco',status:false},
+//   {name: 'Aprender estado derivados', status:false}
+// ];
+
+//haciendo uso de localStorage
+
+// localStorage.setItem('TODOS_V1', JSON.stringify(defaulTodos));// insertar 
+// localStorage.getItem('TODOS_v1');//sacar del storage
+// localStorage.removeItem('TODOS_v1');// elminar un elemento del storage
