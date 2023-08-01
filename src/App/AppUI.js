@@ -33,7 +33,7 @@ function AppUI (){
 
               {error && <p>Hubo un error con los datos</p>}
               
-              {(!loading && foundList.lenght === 0) && <EmptyTodos/> }
+              {(!loading && foundList.length === 0) && <EmptyTodos/> }
 
               {foundList.map(todo =>
                 //cada elemento que se renderiza debe tener una key como identificador unico
