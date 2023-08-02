@@ -1,12 +1,19 @@
-# Repositorio base del Curso de Introducción a React.js en Platzi
+# TODO App
 
-¡Hola, Platzinauta!
+¡Hey! :earth_americas:
 
-En este repositorio encontrarás el código de todas las clases del [Curso de Introducción a React.js](https://platzi.com/reactjs). Para empezar solo debes clonar este repositorio (`git clone`), instalar sus dependencias (`npm i`) y ejecutar la aplicación (`npm start`).
+In this repository you will find a project that was made using HTML, CSS and React.js. The project covers many tools that react has to work easily for example:
 
-La rama principal contiene el código con el que eempezamos el curso. En las demás ramas encontrarás el código de las siguientes clases y finalmente el deploy de la aplicación.
+ - React Hooks
+ - React Portals
+ - React Context
 
-¡Mucha suerte aprendiendo React! #NuncaParesDeAprender
+Using those tools we could develop one WebSite to manage common tasks that we normally have every day. You can even check the project out going to the next link
+
+**[https://carlosrmx.github.io/TodoApp/](https://carlosrmx.github.io/TodoApp/)**
+
+[![My Skills](https://skills.thijs.gg/icons?i=js,html,css,react)](https://skills.thijs.gg)
+
 
 ## Getting Started with Create React App
 
